@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/ic_baseline_home_24"/>
+        <item
+            android:id="@+id/nav_training"
+            android:icon="@drawable/outline_fitness_center_24"
+            android:title="@string/training" />
+        <item
+            android:id="@+id/nav_statistic"
+            android:title="@string/estatistica"
+            android:icon="@mipmap/ic_statistic_foreground"/>
+        <item
+            android:id="@+id/nav_locations"
+            android:title="@string/find_location"
+            android:icon="@drawable/ic_baseline_run_circle_24"/>
+        <item
+            android:id="@+id/nav_tracking"
+            android:title="@string/start_jogging"
+           android:icon="@drawable/ic_baseline_timer_24"/>
+
+        <item
+            android:id="@+id/nav_runs"
+            android:title="@string/runs"
+            android:icon="@drawable/ic_baseline_directions_run_24"/>
+    </group>
+</menu>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.estg.ipp.fitnessapp.Home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_training"
+        android:name="com.estg.ipp.fitnessapp.train.MainTrainingFragment"
+        android:label="Agendar Treino"
+        tools:layout="@layout/fragment_training">
+        <action
+            android:id="@+id/action_nav_training_to_nav_train_list"
+            app:destination="@id/nav_train_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_locations"
+        android:name="com.estg.ipp.fitnessapp.Locations.FindLocationsFragment"
+        android:label="Encontre um lugar para treinar"
+        tools:layout="@layout/fragment_find_locations" >
+        <action
+            android:id="@+id/action_nav_locations_to_show_locations"
+            app:destination="@id/show_locations" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_statistic"
+        android:name="com.estg.ipp.fitnessapp.Statistic.StatisticFragment"
+        android:label="Estatisticas">
+        <action
+            android:id="@+id/action_nav_statistic_to_itemFragment"
+            app:destination="@id/itemFragment" />
+        <action
+            android:id="@+id/action_nav_statistic_to_maisEstatisticasFragment"
+            app:destination="@id/maisEstatisticasFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/show_locations"
+        android:name="com.estg.ipp.fitnessapp.Locations.LocationsFragment"
+        android:label="Lugares Encontrados"
+        tools:layout="@layout/location_item">
+        <argument
+            android:name="area"
+            app:argType="string" />
+        <argument
+            android:name="types"
+            app:argType="com.estg.ipp.fitnessapp.Locations.CheckedStates" />
+        <action
+            android:id="@+id/action_show_locations_to_see_location_details"
+            app:destination="@id/see_location_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_train_list"
+        android:name="com.estg.ipp.fitnessapp.train.TrainingListFragment"
+        android:label="Lista de Treinos"
+        tools:layout="@layout/fragment_train_list">
+        <action
+            android:id="@+id/action_nav_train_list_to_addTrainFragment"
+            app:destination="@id/nav_add_train" />
+        <action
+            android:id="@+id/action_nav_train_list_to_nav_add_train2"
+            app:destination="@id/nav_add_train2" />
+        <action
+            android:id="@+id/action_nav_train_list_to_nav_session_exercise"
+            app:destination="@id/nav_session_exercise" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_train"
+        android:name="com.estg.ipp.fitnessapp.train.EditTrainingFragment"
+        android:label="Adicionar Treino"
+        tools:layout="@layout/add_train_fragment" />
+    <fragment
+        android:id="@+id/nav_add_train2"
+        android:name="com.estg.ipp.fitnessapp.train.EditTrainingFragment"
+        android:label="Alterar Treino"
+        tools:layout="@layout/add_train_fragment" />
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.estg.ipp.fitnessapp.Statistic.ItemFragment"
+        android:label="Melhores resultados pessoais"
+        tools:layout="@layout/fragment_pb_list" />
+    <fragment
+        android:id="@+id/see_location_details"
+        android:name="com.estg.ipp.fitnessapp.Locations.LocationDetailsFragment"
+        android:label="Detalhes do lugar selecionado"
+        tools:layout="@layout/fragment_location_details">
+        <argument
+            android:name="data"
+            app:argType="com.estg.ipp.fitnessapp.Locations.GeopifyAPI.DataClasses.Features" />
+        <action
+            android:id="@+id/action_see_location_details_to_nav_tracking_with_route"
+            app:destination="@id/nav_tracking_with_route" />
+    </fragment>
+    <fragment
+        android:id="@+id/maisEstatisticasFragment"
+        android:name="com.estg.ipp.fitnessapp.Statistic.MaisEstatisticasFragment"
+        android:label="Mais estatisticas" >
+        <argument
+            android:name="peso_atual"
+            app:argType="string" />
+        <argument
+            android:name="user"
+            app:argType="com.estg.ipp.fitnessapp.Database.Entities.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_tracking"
+        android:name="com.estg.ipp.fitnessapp.tracking.TrackingFragment"
+        android:label="Corrida"
+        tools:layout="@layout/fragment_tracking" >
+        <action
+            android:id="@+id/action_nav_tracking_to_selectRouteFragment"
+            app:destination="@id/nav_select_route" />
+        <action
+            android:id="@+id/action_nav_tracking_to_trackingWithoutRouteFragment"
+            app:destination="@id/nav_tracking_wthout_route" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_select_route"
+        android:name="com.estg.ipp.fitnessapp.tracking.SelectRouteFragment"
+        android:label="Selecione um rota"
+        tools:layout="@layout/fragment_select_route" >
+        <action
+            android:id="@+id/action_nav_select_route_to_nav_tracking_with_route"
+            app:destination="@id/nav_tracking_with_route" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_tracking_wthout_route"
+        android:name="com.estg.ipp.fitnessapp.tracking.TrackingWithoutRouteFragment"
+        android:label="Corrida Livre"
+        tools:layout="@layout/fragment_tracking_without_route" >
+        <action
+            android:id="@+id/action_nav_tracking_wthout_route_to_finishedRaceFragment"
+            app:destination="@id/nav_finished_race"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_finished_race"
+        android:name="com.estg.ipp.fitnessapp.tracking.FinishedRaceFragment"
+        android:label="Detalhes da Corrida"
+        tools:layout="@layout/fragment_finished_race" >
+        <argument
+            android:name="mediumSpeed"
+            app:argType="string" />
+        <argument android:name="maxSpeed"
+            app:argType="string" />
+        <argument
+            android:name="distTraveled"
+            app:argType="string" />
+        <argument
+            android:name="totalTime"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_finished_race_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_session_exercise"
+        android:name="com.estg.ipp.fitnessapp.train.SessionExerciseFragment"
+        tools:layout="@layout/fragment_session_exercise_list" >
+        <action
+            android:id="@+id/action_nav_session_exercise_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_tracking_with_route"
+        android:name="com.estg.ipp.fitnessapp.tracking.TrackingWithRouteFragment"
+        android:label="Corrida com Percurso"
+        tools:layout="@layout/fragment_tracking_with_route">
+        <argument
+            android:name="curr_lat"
+            app:argType="string" />
+        <argument android:name="curr_lon"
+            app:argType="string" />
+        <argument android:name="dest_lat"
+            app:argType="string" />
+        <argument android:name="dest_lon"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_tracking_with_route_to_nav_finished_race"
+            app:destination="@id/nav_finished_race"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_runs"
+        android:name="com.estg.ipp.fitnessapp.runs.RunsFragment"
+        android:label="Corridas Feitas" />
+</navigation>

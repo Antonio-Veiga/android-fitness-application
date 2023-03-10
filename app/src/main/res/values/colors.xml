@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gold">#E4C30E</color>
+    <color name="metalic_gold">#D4AF37</color>
+    <color name="platinum">#E5E4E2</color>
+    <color name="grey">#2D2D2D</color>
+    <color name="light_grey">#F5F5F5</color>
+    <color name="light_gold">#FFED8A</color>
+    <color name="blu">#899DFF</color>
+    <color name="looking_good_blue">#12ade5</color>
+    <color name="dark_blue">#00008B</color>
+    <color name="blue">#0000FF</color>
+    <color name="default_text_view">#808080</color>
+    <color name="light_font">#FBFBFB</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="text_shadow">#7F000000</color>
+    <color name="text_shadow_white">#FFFFFF</color>
+    <color name="red">#A11414</color>
+    <color name="green_1">#4EAF25</color>
+    <color name="gray_1">#AAAAAA</color>
+    <color name="light_gray_1">#F3F3F3</color>
+    <color name="slightly_darker_blue">#0094D9</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="dark_yellow">#806920</color>
+</resources>
